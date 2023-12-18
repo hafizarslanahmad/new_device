@@ -1,0 +1,20 @@
+
+<h2> My post </h2>
+
+<%= simple_form_for @post do |f| %>
+ <%= f.hidden_field :user_id, value:   current_user.id %>
+    <div class="card " style="background-color:#dee2e6; ">
+        <div class="card-body">
+            <div class= "mt-1">
+             <%= f.input :tital %>
+              </div>
+                <div class= "mt-4">
+                <%= f.input :post_field %>
+                </div>
+              <div class= "mt-4">
+             <%= f.submit "post" , class:"btn btn-primary" %>
+            </div>
+        </div>
+    </div>
+ 
+<% end %>   

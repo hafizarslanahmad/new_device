@@ -1,0 +1,23 @@
+<h2> Show posts </h2>
+
+  <strong> Tital: </strong>
+   <%= @post.tital %>
+  <br>
+  <strong> Post_field </strong>
+   <%= @post.post_field %>
+
+   <h3> Comment </h3>
+
+<%= simple_form_for @comment, data:{turbo: false} do |f| %>
+
+ <%= f.hidden_field :user_id, value:  current_user.id %>
+ <%= f.hidden_field(:post_id, value:  @post.id) %>
+ 
+          <div class= "mt-1">
+             <%= f.input :text %>
+              </div>
+              <div class= "mt-4">
+             <%= f.submit "comment" , class:"btn btn-primary" %>
+          </div>
+ 
+<% end %>   
